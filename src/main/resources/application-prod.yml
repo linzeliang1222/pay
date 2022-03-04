@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: xxxx
+    url: jdbc:mysql://xxxx:3306/pay?characterEncoding=UTF-8&useSSL=false
+  rabbitmq:
+    addresses: 127.0.0.1
+    port: 5672
+    username: linzeliang
+    password: 123456
+logging:
+  pattern:
+    console: "[%thread] %-5level %logger{36} - %msg%n"
+  level:
+    top.linzeliang.pay: info
+  file: /root/logs/pay.log
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mappers/*.xml
+wx:
+  app-id: xxxx
+  mch-id: xxxx
+  mch-key: xxxx
+  notify-url: http://124.222.233.244/pay/notify
+  return-url: http://124.222.233.244/bought
+alipay:
+  app-id: xxxx
+  private-key: xxxx
+  alipay-public-key: xxxx
+  notify-url: http://124.222.233.244/pay/notify
+  return-url: http://124.222.233.244/bought
+server:
+  port: 8081
